@@ -21,4 +21,14 @@ public class MovieBookingService {
         accountBookings.setBookings(bookings);
         return accountBookings;
     }
+
+    public void addBooking(Long userId, Long movieId) {
+
+        Booking booking = new Booking();
+
+        booking.setAccount_id(userId);
+        booking.setMovie_id(movieId);
+
+        repository.saveAndFlush(booking);
+    }
 }
